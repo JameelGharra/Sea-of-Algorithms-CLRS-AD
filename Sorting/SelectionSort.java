@@ -1,10 +1,15 @@
-
+/*
+ * Evaluating worst-case running time:
+ * occurs when the array is sorted in a reversed order, in that case
+ * segma(n-i) when i = 1 to i = n-1
+ */
+package Sorting;
 class SelectionSorter_1 {
     public static void sort(int[] arr) {
-        for(int i = 0; i < arr.length-1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             int minValueInd = i;
-            for(int j = i+1; j < arr.length; j++) {
-                if(arr[minValueInd] > arr[j]) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[minValueInd] > arr[j]) {
                     minValueInd = j;
                 }
             }
@@ -14,6 +19,7 @@ class SelectionSorter_1 {
         }
     }
 }
+
 public class SelectionSort {
     public static void main(String[] args) {
         int[] arrTest = {7, 3, 8, 1, 2, 5, 2, 1};

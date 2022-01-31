@@ -1,4 +1,4 @@
-
+package Sorting;
 class InsertionSorter_1 {
     public static void sort(int[] arr) {
         for (int i = 1; i < arr.length; ++i) {
@@ -54,5 +54,3 @@ public class InsertionSort {
         }
     }
 }
-
-
