@@ -43,11 +43,31 @@ class Merger_2 {
     }
 }
 public class MergeSort {
+    public static void mergeSort(int[] arr) {
+        recursiveMergeSort(arr, 0, arr.length-1);
+    }
+    private static void recursiveMergeSort(int[] arr, int p, int r) {
+        if(p != r) {
+            int q = (p + r) / 2;
+            recursiveMergeSort(arr, p, q);
+            recursiveMergeSort(arr, q + 1, r);
+            Merger_1.merge(arr, p, q, r);
+        }
+    }
     public static void main(String[] args) {
+        System.out.println("Testing merge..");
         int[] arr = {1, 2, 3, 10, 20, 30, 7, 25, 29, 100};
         Merger_1.merge(arr, 3, 5,8);
         for(int num : arr) {
             System.out.print(num+",");
         }
+        System.out.println();
+        System.out.println("Testing merge sort..");
+        int []messyArray;
+        mergeSort(messyArray = new int[]{9,8,7,6,5,4});
+        for(int number : messyArray) {
+            System.out.print(number+",");
+        }
+        System.out.println();
     }
 }

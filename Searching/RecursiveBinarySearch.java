@@ -14,7 +14,8 @@ package Searching;
  */
 public class RecursiveBinarySearch {
 
-    public static int recursiveBinarySearch(int[] arr, int value) {
+    public static final int NOT_FOUND = -1;
+    public static int search(int[] arr, int value) {
         return recursiveSearch(arr, value, 0,  arr.length-1);
     }
     private static int recursiveSearch(int[] arr, int value, int p, int q) {
@@ -36,11 +37,11 @@ public class RecursiveBinarySearch {
         int[] testingArrayTrivial = {0, 1, 2, 3, 4, 5};
         System.out.println("Test #1");
         for(int i = -2; i < 7; i++)
-            System.out.println(recursiveBinarySearch(testingArrayTrivial, i));
+            System.out.println(search(testingArrayTrivial, i));
         System.out.println("Test #2");
         int[] testingArraySides = {1};
-        System.out.println(recursiveBinarySearch(testingArraySides, 1));
-        System.out.println(recursiveBinarySearch(testingArraySides, -1));
+        System.out.println(search(testingArraySides, 1));
+        System.out.println(search(testingArraySides, -1));
         // expected results:
         // -1\n-1\n0\n1\n2\n3\n4\n5\n-1
         //0\n-1
